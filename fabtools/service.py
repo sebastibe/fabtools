@@ -79,6 +79,7 @@ def restart(service):
     run_as_root('service %(service)s restart' % locals())
 
 
+
 def reload(service):
     """
     Reload a service.
