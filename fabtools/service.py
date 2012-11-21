@@ -79,7 +79,6 @@ def restart(service):
     run_as_root('service %(service)s restart' % locals())
 
 
-
 def reload(service):
     """
     Reload a service.
@@ -111,6 +110,6 @@ def force_reload(service):
 
     .. warning::
 
-        The service needs to support the ``force-reload`` operation.
+        The service need to support the ``force-reload`` operation.
     """
     run_as_root('service %(service)s force-reload' % locals())
