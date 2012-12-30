@@ -32,7 +32,6 @@ def _settings_dict(config):
 
     # Strip leading and trailing double quotes introduced by vagrant 1.1
     settings['key_filename'] = config['IdentityFile'].strip('"')
-
     settings['forward_agent'] = (config.get('ForwardAgent', 'no') == 'yes')
     settings['disable_known_hosts'] = True
 
