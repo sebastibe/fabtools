@@ -110,6 +110,6 @@ def force_reload(service):
 
     .. warning::
 
-        The service need to support the ``force-reload`` operation.
+        The service needs to support the ``force-reload`` operation.
     """
     run_as_root('service %(service)s force-reload' % locals())
