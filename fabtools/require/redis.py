@@ -17,7 +17,7 @@ from fabtools.utils import run_as_root
 import fabtools.supervisor
 
 
-VERSION = '2.6.12'
+VERSION = '2.6.13'
 
 BINARIES = [
     'redis-benchmark',
@@ -127,7 +127,8 @@ def instance(name, version=VERSION, **kwargs):
     params.setdefault('port', '6379')
     params.setdefault('logfile', '/var/log/redis/redis-%(name)s.log' % locals())
     params.setdefault('loglevel', 'verbose')
-    params.setdefault('dbfilename', '/var/db/redis/redis-%(name)s-dump.rdb' % locals())
+    params.setdefault('dir', '/var/db/redis')
+    params.setdefault('dbfilename', 'redis-%(name)s-dump.rdb' % locals())
     params.setdefault('save', ['900 1', '300 10', '60 10000'])
 
     # Build config file from parameters
